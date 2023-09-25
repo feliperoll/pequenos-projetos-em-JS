@@ -33,6 +33,12 @@ function novaVaga() {
 }
 function exibirVaga() {
   const indice = prompt("Informe o índice da vaga que deseja exibir:");
+
+  if (indice >= vagas.length || indice < 0) {
+    alert("Índice inválido");
+    return;
+  }
+
   const vaga = vagas[indice];
 
   const candidatosEmTexto = vaga.candidatos.reduce(
